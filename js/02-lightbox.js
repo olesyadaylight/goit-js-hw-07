@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryContainer = document.querySelector(`.gallery`);
 const galleryCardsMarkup = createPictureCardsMarkUp(galleryItems);
 galleryContainer.insertAdjacentHTML("beforeend", galleryCardsMarkup);
-galleryContainer.addEventListener(`click`,onGalleryContainerClick);
+
 
 console.log(galleryItems);
 // step 1
@@ -21,14 +21,18 @@ function createPictureCardsMarkUp(images) {
     }).join("");
 };
 
-function onGalleryContainerClick(e) {
+  // function onGalleryContainerClick(e) {
 
-    e.preventDefault();
-    if ((e.target.nodeName !== "IMG")) {
-        return;
-    }
-    const lightbox = new SimpleLightbox('.gallery a', {
-         captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250
-    })
-};
-galleryContainer.addEventListener(`click`,onGalleryContainerClick);
+  //    e.preventDefault();
+  //    if ((e.target.nodeName !== "IMG")) {
+  //        return;
+  //    }
+  //     const lightbox = new SimpleLightbox('.gallery a', {
+  //          captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250
+  //     })
+  // };
+  // galleryContainer.addEventListener(`click`, onGalleryContainerClick);
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
